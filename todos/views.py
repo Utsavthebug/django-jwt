@@ -8,9 +8,8 @@ from rest_framework.permissions import IsAuthenticated
 
 class TodoList(APIView):
     permission_classes = [IsAuthenticated]
-
-    def getTodo(self,request):
+  
+    def get(self,request):
         response = requests.get('https://jsonplaceholder.typicode.com/posts')
-        todos = json.loads(response.data)
-        return Response(todos)
+        return Response(response)
 
