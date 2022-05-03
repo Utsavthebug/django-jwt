@@ -11,5 +11,5 @@ class TodoList(APIView):
   
     def get(self,request):
         response = requests.get('https://jsonplaceholder.typicode.com/posts')
-        return Response(response)
+        return Response(response.json())
 
